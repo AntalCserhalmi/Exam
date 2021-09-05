@@ -86,7 +86,6 @@ public class Main {
     }
 
     private static List<String> getHoles(){
-        List<String> holes = new ArrayList<>();
         StringBuilder temp = new StringBuilder();
         int lastNumber = 0;
         for (Integer current : depth) {
