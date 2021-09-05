@@ -33,7 +33,7 @@ public class Main {
      * 1.Feladat
      */
     public static void readFile() throws FileNotFoundException {
-        File file = new File("C:/Users/Csucsi/Desktop/[ÉRETTSÉGI]/src/com/demo/melyseg.txt");
+        File file = new File("melyseg.txt");
         Scanner in = new Scanner(file);
         while (in.hasNextLine()){
             depth.add(Integer.parseInt(in.nextLine()));
