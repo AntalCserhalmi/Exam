@@ -24,7 +24,7 @@ public class Main {
             writeFile();
             getNumberOfHoles();
             informationsAboutHoles(chosenIndex);
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -74,22 +74,15 @@ public class Main {
     /**
      * 4.Feladat
      */
-    public static void writeFile(){
+    public static void writeFile() throws IOException {
         holes = getHoles();
-
-        try {
-            FileWriter fileWriter = new FileWriter("godrok.txt");
-            for (String hole : holes) {
-                fileWriter.write(hole + "\n");
-            }
-            fileWriter.close();
-            System.out.println("4.Feladat:");
-            System.out.println("Létrehoztam a fájlt.");
-        }catch (IOException e){
-            e.printStackTrace();
+        FileWriter fileWriter = new FileWriter("godrok.txt");
+        for (String hole : holes) {
+            fileWriter.write(hole + "\n");
         }
-
-
+        fileWriter.close();
+        System.out.println("4.Feladat:");
+        System.out.println("Létrehoztam a fájlt.");
     }
 
     private static List<String> getHoles(){
